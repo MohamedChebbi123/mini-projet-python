@@ -9,12 +9,14 @@ import { RouterModule,Routes } from '@angular/router';
 import path from 'path';
 import { StudentlistComponent } from './studentlist/studentlist.component';
 import { AddCourseComponent } from './add-course/add-course.component';
+import { CoursesComponent } from './courses/courses.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    CoursesComponent,
   ],
   imports: [
     BrowserModule,
