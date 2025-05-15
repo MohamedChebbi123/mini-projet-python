@@ -158,7 +158,7 @@ const EnrolledCourses = () => {
                   key={course.enrolled_course_id}
                   className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
                 >
-                  <h6 className="font-bold text-xl truncate p-4">{course.enrolled_course_id}</h6>
+                 {/* <h6 className="font-bold text-xl truncate p-4">{course.enrolled_course_id}</h6> */}
                   <div className="bg-gradient-to-r from-blue-500 to-blue-600 p-4 text-white">
                     <h3 className="font-bold text-xl truncate">{course.course_name}</h3>
                     <span className="inline-block bg-blue-700 text-xs px-2 py-1 rounded-full mt-1">{course.course_field}</span>
