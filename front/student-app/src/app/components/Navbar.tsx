@@ -33,23 +33,22 @@ const Navbar = () => {
     localStorage.removeItem('student');
     router.push('/Login');
   };
-
   return (
-    <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md' : 'bg-white shadow-sm'}`}>
+    <nav className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-sm shadow-lg' : 'bg-white/90 shadow-sm'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
           <div className="flex items-center">
             <Link href="/" className="flex items-center group">
-              <div className="p-2 mr-2 rounded-lg bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:from-indigo-700 group-hover:to-purple-700 transition-all">
+              <div className="p-3 mr-3 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 group-hover:from-blue-700 group-hover:to-indigo-800 transition-all shadow-md hover:shadow-lg hover:shadow-blue-200">
                 <FaGraduationCap className="text-white text-xl" />
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="text-2xl font-bold bg-gradient-to-br from-blue-600 to-indigo-700 bg-clip-text text-transparent">
                 EduPortal
               </span>
             </Link>
           </div>
 
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden md:flex items-center space-x-2">
             <NavLink href="/Books" active={isActive('/Books')} icon={<FaBook className="text-lg" />} label="Books" />
             <NavLink href="/Courses" active={isActive('/Courses')} icon={<FaBook className="text-lg" />} label="Courses" />
             
@@ -58,10 +57,9 @@ const Navbar = () => {
                 <NavLink href="/Favoritebooks" active={isActive('/Favoritebooks')} icon={<FaHeart className="text-lg" />} label="Favorites" />
                 <NavLink href="/Student_course" active={isActive('/Student_course')} icon={<FaGraduationCap className="text-lg" />} label="My Courses" />
                 <NavLink href="/Profile" active={isActive('/Profile')} icon={<FaUserCircle className="text-lg" />} label="Profile" />
-                
-                <button
+                  <button
                   onClick={handleLogout}
-                  className="flex items-center px-4 py-2 rounded-lg font-medium text-red-600 hover:text-white hover:bg-red-600 transition-all"
+                  className="flex items-center px-5 py-2.5 rounded-lg font-medium text-red-600 hover:text-white hover:bg-red-600 transition-all duration-300 shadow-sm border border-red-100 hover:shadow-red-100"
                 >
                   <FaSignInAlt className="mr-2" />
                   Logout
@@ -134,9 +132,9 @@ const Navbar = () => {
 
 const NavLink = ({ href, active, icon, label }: { href: string, active: boolean, icon: React.ReactNode, label: string }) => (
   <Link href={href}>
-    <div className={`flex items-center px-4 py-2 rounded-lg font-medium transition-all ${active 
-      ? 'bg-indigo-50 text-indigo-700' 
-      : 'text-gray-600 hover:text-indigo-600 hover:bg-indigo-50'}`}>
+    <div className={`flex items-center px-5 py-2.5 rounded-lg font-medium transition-all duration-300 ${active 
+      ? 'bg-blue-50 text-blue-700 shadow-sm shadow-blue-100' 
+      : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'}`}>
       <span className="mr-2">{icon}</span>
       {label}
     </div>
@@ -151,9 +149,9 @@ const MobileNavLink = ({ href, active, icon, label, onClick }: {
   onClick: () => void 
 }) => (
   <Link href={href} onClick={onClick}>
-    <div className={`flex items-center px-3 py-3 rounded-lg text-base font-medium transition-colors ${active 
-      ? 'bg-indigo-50 text-indigo-700' 
-      : 'text-gray-600 hover:text-indigo-600 hover:bg-indigo-50'}`}>
+    <div className={`flex items-center px-4 py-3.5 rounded-lg text-base font-medium transition-all duration-300 ${active 
+      ? 'bg-blue-50 text-blue-700 shadow-sm shadow-blue-100' 
+      : 'text-gray-600 hover:text-blue-600 hover:bg-blue-50'}`}>
       <span className="mr-3">{icon}</span>
       {label}
     </div>

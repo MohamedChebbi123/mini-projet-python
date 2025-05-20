@@ -56,21 +56,24 @@ const StudentLogin = () => {
       setIsLoading(false);
     }
   };
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-purple-50 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
       <div className="w-full max-w-md">
-        <div className="bg-white rounded-xl shadow-2xl overflow-hidden">
-          <div className="bg-gradient-to-r from-purple-600 to-indigo-600 py-6 px-8 text-center">
-            <h2 className="text-2xl font-bold text-white">Student Portal</h2>
-            <p className="text-purple-100 text-sm mt-1">Sign in to access your courses</p>
+        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden border border-blue-50">
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 py-8 px-8 text-center relative">
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-500 rounded-full opacity-20"></div>
+            <div className="absolute -bottom-16 -left-16 w-32 h-32 bg-indigo-500 rounded-full opacity-20"></div>
+            <div className="relative">
+              <h2 className="text-3xl font-bold text-white mb-2">Welcome Back</h2>
+              <p className="text-blue-100 text-md">Sign in to access your learning portal</p>
+            </div>
           </div>
 
-          <div className="p-8">
+          <div className="p-10">
             {error && (
-              <div className="mb-6 p-3 bg-red-50 border-l-4 border-red-500 rounded-r">
+              <div className="mb-6 p-4 bg-red-50 border border-red-100 shadow-sm rounded-xl">
                 <div className="flex items-center">
-                  <svg className="w-5 h-5 text-red-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
                   </svg>
                   <span className="text-red-700 font-medium">{error}</span>
@@ -78,14 +81,13 @@ const StudentLogin = () => {
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            <form onSubmit={handleSubmit} className="space-y-6">              <div className="mb-6">
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                   Full Name
                 </label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <svg className="h-5 w-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
                     </svg>
                   </div>
@@ -95,20 +97,20 @@ const StudentLogin = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="block w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300 transition-all duration-200"
                     placeholder="John Doe"
                     required
                   />
                 </div>
               </div>
 
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+              <div className="mb-8">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                   Email Address
                 </label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <svg className="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                    <svg className="h-5 w-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
                     </svg>
                   </div>
@@ -118,7 +120,7 @@ const StudentLogin = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="block w-full pl-12 pr-4 py-3 border border-gray-200 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-300 transition-all duration-200"
                     placeholder="john@example.com"
                     required
                   />
@@ -129,7 +131,7 @@ const StudentLogin = () => {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className={`w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-all duration-300 ${isLoading ? 'opacity-75 cursor-not-allowed' : 'hover:scale-[1.02]'}`}
+                  className={`w-full flex justify-center py-3.5 px-5 border border-transparent rounded-xl shadow-md text-base font-medium text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 ${isLoading ? 'opacity-75 cursor-not-allowed' : 'hover:scale-[1.02] hover:shadow-lg'}`}
                 >
                   {isLoading ? (
                     <>
